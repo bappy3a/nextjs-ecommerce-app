@@ -7,10 +7,16 @@ const Banner = () => {
         <div className='carousel-slider'>
             <Carousel autoPlay infiniteLoop showStatus={false} showIndicators={false} showThumbs={false} interval={5000} >
                 <div>
-                    <img loading='lazy' src="https://soliloquywp.com/wp-content/uploads/2013/05/adults-backlit-beach-950047-1200x450_c.jpg" />
+                    <img loading='lazy' src="https://hishabee.fra1.digitaloceanspaces.com/https://hishabee.fra1.digitaloceanspaces.com/uploads/sliders/sample/7.png" />
                 </div>
                 <div>
-                    <img loading='lazy' src="https://oceanwp.org/wp-content/uploads/2018/07/smartsliderfeatured.png" />
+                    <img loading='lazy' src="https://hishabee.fra1.digitaloceanspaces.com/https://hishabee.fra1.digitaloceanspaces.com/uploads/sliders/sample/6.png" />
+                </div>
+                <div>
+                    <img loading='lazy' src="https://hishabee.fra1.digitaloceanspaces.com/https://hishabee.fra1.digitaloceanspaces.com/uploads/sliders/sample/5.png" />
+                </div>
+                <div>
+                    <img loading='lazy' src="https://hishabee.fra1.digitaloceanspaces.com/https://hishabee.fra1.digitaloceanspaces.com/uploads/sliders/sample/4.png" />
                 </div>
             </Carousel>
         </div>
