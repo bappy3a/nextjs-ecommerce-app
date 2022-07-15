@@ -7,7 +7,7 @@ const Banner = () => {
         <div className='carousel-slider'>
             <Carousel autoPlay infiniteLoop showStatus={false} showIndicators={false} showThumbs={false} interval={5000} >
                 <div>
-                    <img loading='lazy' src="https://hishabee.fra1.digitaloceanspaces.com/https://hishabee.fra1.digitaloceanspaces.com/uploads/sliders/sample/7.png" />
+                    <img loading='lazy' src="https://hishabee.fra1.digitaloceanspaces.com/https://hishabee.fra1.digitaloceanspaces.com/uploads/sliders/sample/2.png" />
                 </div>
                 <div>
                     <img loading='lazy' src="https://hishabee.fra1.digitaloceanspaces.com/https://hishabee.fra1.digitaloceanspaces.com/uploads/sliders/sample/6.png" />
