@@ -3,15 +3,21 @@ import React from 'react';
 import logo from '../public/logo.png';
 import {MenuIcon, SearchIcon, ShoppingCartIcon} from '@heroicons/react/solid';
 import { signIn, signOut, useSession } from "next-auth/react";
-
+import { useRouter } from 'next/router';
+import { useSelector } from 'react-redux';
+ 
 const Header = () => {
     const {data} = useSession();
+    const router = useRouter();
+    const items = useSelector((state) => state.basket.items);
+
+
     return (
         <header>
             {/* Top Header */}
             <div className='bg-[#121920] flex items-center p-1 flex-grow py-2'>
                 <div className='flex mt-2 items-center flex-grow sm:flex-grow-0'>
-                    <Image src={logo} width={150} height={40} alt="Logo Image" objectFit='contain' className='cursor-pointer' />
+                    <Image onClick={()=>router.push('/')} src={logo} width={150} height={40} alt="Logo Image" objectFit='contain' className='cursor-pointer' />
                 </div>
 
                 <div className='hidden sm:flex items-center h-10 flex-grow cursor-pointer rounded-md bg-yellow-400 hover:bg-yellow-500 '>
@@ -36,9 +42,9 @@ const Header = () => {
                         <p className="font-extrabold md:text-sm">& Orders</p>
                     </div>
 
-                    <div className="link relative flex items-center">
+                    <div onClick={()=>router.push('/checkout')} className="link relative flex items-center">
                             <span className="absolute top-0 right-0 h-4 w-4 bg-yellow-400 text-center rounded-full text-black font-bold">
-                            0
+                            {items.length}
                             </span>
                             <ShoppingCartIcon className="h-10" />
                             <p className="hidden md:inline font-extrabold md:text-sm mt-2">Basket</p>

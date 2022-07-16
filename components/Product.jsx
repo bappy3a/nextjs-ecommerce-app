@@ -2,13 +2,24 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import Currency from 'react-currency-formatter';
 import { StarIcon } from '@heroicons/react/solid';
+import { addToBasket } from '../slices/basketSlice';
+import { useDispatch } from 'react-redux';
 
 const MAX_RATING = 5;
 const MIN_RATING = 1;
 
 const Product = ({id,title,category,description,image,price,rating}) => {
 
-    // const [rating] = useState( Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING )
+    const dispatch = useDispatch()
+
+    const addItemToBasket = ()=>{
+        const product ={
+            id, title, price, description, category, image, rating
+         }   
+
+         dispatch(addToBasket(product))
+    }
+    
     const  ratingFormApi = Math.floor(rating.rate)
 
     return (
@@ -29,7 +40,7 @@ const Product = ({id,title,category,description,image,price,rating}) => {
                 <Currency quantity={price} />
             </div>
 
-            <button className='button'>Add to Basket</button>
+            <button onClick={addItemToBasket} className='button'>Add to Basket</button>
         </div>
     );
 };
