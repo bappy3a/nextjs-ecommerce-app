@@ -2,8 +2,10 @@ import Image from 'next/image';
 import React from 'react';
 import logo from '../public/logo.png';
 import {MenuIcon, SearchIcon, ShoppingCartIcon} from '@heroicons/react/solid';
+import { signIn, signOut, useSession } from "next-auth/react";
 
 const Header = () => {
+    const {data} = useSession();
     return (
         <header>
             {/* Top Header */}
@@ -18,12 +20,15 @@ const Header = () => {
                 </div>
 
                 <div className=' text-white flex items-center text-sm space-x-8 whitespace-nowrap relative mx-6'>
-                    <div className=' relative link '>
-                        <p className=' hover:underline ' >Sing In</p>
+                    <div className=' relative link ' onClick={signIn} >
+                        <p className=' hover:underline cursor-pointer'>{data ? `Hello, ${data.user.name}` : 'Sing In'}</p>
+                        
                         <br/>
-                        <span className='absolute bottom-0 -right-7 h-5 bg-yellow-400 text-center cursor-pointer w-13  text-black font-bold rounded px-1'>
+                        {data && (
+                            <span className={`${ !signIn ? 'hidden' : 'absolute bottom-0 -right-7 h-5 bg-yellow-400 text-center cursor-pointer w-13  text-black font-bold rounded px-1' }`} onClick={!data ? signIn : signOut}>
                             Log Out
                         </span>
+                        )}
                     </div>
 
                     <div className="link">

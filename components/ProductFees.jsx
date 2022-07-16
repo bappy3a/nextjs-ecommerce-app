@@ -10,41 +10,20 @@ const ProductFees = ({ products }) => {
                 ))
             }
 
-            <img className='md:col-span-full'
-                src="https://images.unsplash.com/photo-1501082183835-b7b33db89c3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2920&q=80"
-                alt=""
-            />
+            <img className='md:col-span-full' src="https://images.unsplash.com/photo-1501082183835-b7b33db89c3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2920&q=80" alt="" />
 
             <div className='md:col-span-2'>
                 {products
                     .slice(4, 5)
                     .map(({ id, title, price, description, category, image, rating }) => (
-                        <Product
-                            key={id}
-                            id={(id)}
-                            title={title}
-                            price={price}
-                            description={description}
-                            category={category}
-                            image={image}
-                            rating={rating}
-                        />
+                        <Product key={id} id={(id)} title={title} price={price} description={description} category={category} image={image} rating={rating} />
                     ))}
             </div>
 
             {products
                 .slice(5, products.length)
                 .map(({id, title, price, description, category, image, rating})=>(
-               <Product
-                    key={id}
-                    id={(id)}
-                    title={title}
-                    price={price}
-                    description={description}
-                    category={category}
-                    image={image}
-                    rating={rating}
-               />
+                <Product key={id} id={(id)} title={title} price={price} description={description} category={category} image={image} rating={rating} />
             ))}
         </div>
     );
